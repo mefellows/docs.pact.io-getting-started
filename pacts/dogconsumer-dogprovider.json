@@ -1,0 +1,47 @@
+{
+  "consumer": {
+    "name": "DogConsumer"
+  },
+  "provider": {
+    "name": "DogProvider"
+  },
+  "interactions": [
+    {
+      "description": "a request for all dogs",
+      "providerState": "i have a list of dogs",
+      "request": {
+        "method": "GET",
+        "path": "/dogs",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "dog": 1,
+            "name": "rocky"
+          }
+        ],
+        "matchingRules": {
+          "$.body[0].dog": {
+            "match": "type"
+          },
+          "$.body[0].name": {
+            "match": "regex",
+            "regex": "(\\S+)"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

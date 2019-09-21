@@ -1,0 +1,75 @@
+I, [2019-09-19T14:39:48.976559 #24729]  INFO -- : Registered expected interaction GET /dogs
+D, [2019-09-19T14:39:48.976922 #24729] DEBUG -- : {
+  "description": "a request for all dogs",
+  "providerState": "i have a list of dogs",
+  "request": {
+    "method": "GET",
+    "path": "/dogs",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": [
+      {
+        "dog": {
+          "json_class": "Pact::SomethingLike",
+          "contents": 1
+        },
+        "name": {
+          "json_class": "Pact::Term",
+          "data": {
+            "generate": "rocky",
+            "matcher": {"json_class":"Regexp","o":0,"s":"(\\S+)"}
+          }
+        }
+      }
+    ]
+  }
+}
+I, [2019-09-19T14:39:48.990237 #24729]  INFO -- : Received request GET /dogs
+D, [2019-09-19T14:39:48.990352 #24729] DEBUG -- : {
+  "path": "/dogs",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json",
+    "User-Agent": "axios/0.19.0",
+    "Host": "localhost:53360",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2019-09-19T14:39:48.990600 #24729]  INFO -- : Found matching response for GET /dogs
+D, [2019-09-19T14:39:48.990709 #24729] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body": [
+    {
+      "dog": {
+        "json_class": "Pact::SomethingLike",
+        "contents": 1
+      },
+      "name": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "rocky",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "(\\S+)"
+          }
+        }
+      }
+    }
+  ]
+}
+I, [2019-09-19T14:39:48.996589 #24729]  INFO -- : Verifying - interactions matched
+I, [2019-09-19T14:39:49.000796 #24729]  INFO -- : Cleared interactions
+I, [2019-09-19T14:39:49.004597 #24729]  INFO -- : Writing pact for DogProvider to /Users/matthewfellows/development/public/pact-getting-started-guide/pacts/dogconsumer-dogprovider.json
